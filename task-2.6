@@ -1,0 +1,11 @@
+#задача 6
+g = int(input('Введите количество товаров: '))
+i = 1
+my_dict = []
+my_list = []
+while i <= g:
+     my_dict = dict({'название': input('название: '), 'цена': input('цена: '),
+                     'количество': input('количество: '), 'eд': input('единица измерения: ')})
+     my_list.append((i, my_dict))
+     i += 1
+print(tuple(my_list))

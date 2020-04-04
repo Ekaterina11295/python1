@@ -1,0 +1,12 @@
+#задача 4
+sent = input("Введите несколько слов через пробел: ")
+word = []
+i = 1
+for elem in range(sent.count(' ') + 1):
+    word = sent.split()
+    if len(str(word)) <= 10:
+        print(f" {i} {word [elem]}")
+        i += 1
+    else:
+        print(f" {i} {word [elem] [0:10]}")
+        i += 1
