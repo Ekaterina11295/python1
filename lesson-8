@@ -1,0 +1,40 @@
+"""задача 1"""
+
+
+class Date:
+    def __init__(self, date):
+        self.date = str(date)
+
+    @classmethod
+    def extract(cls, date):
+        my_date = []
+
+        for i in date.split():
+            if i != '-': my_date.append(i)
+
+        return int(my_date[0]), int(my_date[1]), int(my_date[2])
+
+    @staticmethod
+    def valid(day, month, year):
+        if 1 <= day <= 31:
+            if 1 <= month <= 12:
+                if 2019 >= year >= 0:
+                    return f'Дата указана верно!'
+                else:
+                    return f'Неправильный год!'
+            else:
+                return f'Неправильный месяц!'
+        else:
+            return f'Неправильный день!'
+
+    def __str__(self):
+        return f'Сегодня - {Date.extract(self.date)}'
+
+
+Today = Date('21 - 4 - 2020')
+print(Today)
+print(Date.valid(1, 1, 2030))
+print(Today.valid(1, 13, 2019))
+print(Date.valid(1, 11, 2000))
+print(Date.extract('11 - 11 - 2011'))
+print(Today.extract('11 - 11 - 2020'))
